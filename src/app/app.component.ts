@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { spanishToAlaedo, alaedoToSpanish } from './alaedo.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  spanish = '';
+  alaedo = '';
+
+  constructor() {
+  }
+
+
+  toSpanish() {
+    this.spanish = alaedoToSpanish(this.alaedo);
+  }
+
+  toAlaedo() {
+    this.alaedo = spanishToAlaedo(this.spanish);
+  }
 }
